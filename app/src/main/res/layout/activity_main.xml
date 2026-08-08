@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#0055FF"
+    android:padding="32dp"
+    android:clipChildren="false">
+
+    <!--顶部状态栏-->
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFFFF"
+            android:textSize="22sp"/>
+    </LinearLayout>
+
+    <!--顶部应用卡片区域：用FrameLayout包一层，保证整体内容居中-->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="290dp"
+        android:layout_marginTop="40dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_app"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center|bottom"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            android:paddingTop="18dp"
+            android:paddingHorizontal="16dp"/>
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!--底部功能按钮栏-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bottom_func"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        android:paddingHorizontal="20dp"/>
+
+</LinearLayout>
